@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped" style="width:100%">
+      <tr>
+        <th>Symbol</th>
+        <th>Shares</th>
+        <th>Price</th>
+        <th>TOTAL</th>
+      </tr>
+      <tr>
+    {% for stock in stocks %}
+        <td>{{stock.stock}}</td>
+        <td>{{stock.number}}</td>
+        <td>{{stock.price}}</td>
+        <td>${{stock.stock_total}}</td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <td>Available Cash</td>
+        <td></td>
+        <td></td>
+        <td>{{cash}}</td>
+    </tr>
+    <tr>
+        <td><strong>Total</strong></td>
+        <td></td>
+        <td></td>
+        <td><strong>{{all_total}}</strong></td>
+    </tr>
+    </table>
+
+{% endblock %}
